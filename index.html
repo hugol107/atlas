@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Canarias — Aire comprimido, vacío y manipulación de carga</title>
+<meta name="description" content="Más de 30 años haciendo más eficiente y fiable la industria de Canarias: aire comprimido, vacío y gases, manipulación de carga y generación de energía. Sedes en Tenerife y Las Palmas.">
+<link rel="icon" href="https://atlascanarias.es/wp-content/uploads/2020/07/cropped-GRUPO-ATLAS-WEB-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>pleassssss
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="contenedor">
+    <div class="tb-tel">
+      <span>Tenerife: <a href="tel:+34922202076">922 202 076</a></span>
+      <span>Las Palmas: <a href="tel:+34928183823">928 183 823</a></span>
+    </div>
+    <div class="tb-right">
+      <a href="mailto:info@atlascanarias.es">info@atlascanarias.es</a>
+      <a href="https://www.linkedin.com/company/grupoatlascanarias" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="contenedor nav">
+    <a class="logo" href="index.html" aria-label="Atlas Canarias - inicio">
+      <span class="logo-pill">
+        <!-- 👉 LOGO: cambia este src por tu archivo si tienes una versión mejor -->
+        <img src="https://atlascanarias.es/wp-content/uploads/2020/09/ATLAS-LOGO-LIGHT_Mesa-de-trabajo-1-150x61.png" alt="Atlas Canarias">
+      </span>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="aire-comprimido.html">Aire comprimido</a>
+      <a href="manipulacion.html">Manipulación</a>
+      <a href="vacio-gases.html">Vacío y gases</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="nav-acciones">
+      <a class="btn btn-primario" href="contacto.html">Solicitar diagnóstico</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MENÚ MÓVIL ============ -->
+<div id="movil">
+  <button class="cerrar" id="cerrarMovil" aria-label="Cerrar menú">×</button>
+  <a href="index.html">Inicio</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="aire-comprimido.html">Aire comprimido</a>
+  <a href="manipulacion.html">Manipulación</a>
+  <a href="vacio-gases.html">Vacío y gases</a>
+  <a href="contacto.html">Contacto</a>
+  <a class="btn btn-primario" href="contacto.html">Solicitar diagnóstico</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="contenedor hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">+30 años · Tenerife · Las Palmas</span>
+      <h1>Más rendimiento para tu planta, con el <span class="res">máximo ahorro</span>.</h1>
+      <p class="lead">Soluciones fiables y energéticamente eficientes de aire comprimido, vacío y gases, manipulación de carga y generación de energía para la industria de Canarias. Con servicio técnico propio en las dos islas.</p>
+      <div class="hero-acciones">
+        <a class="btn btn-primario" href="contacto.html">Solicitar diagnóstico <span class="flecha">→</span></a>
+        <a class="btn btn-secundario" href="aire-comprimido.html">Ver soluciones</a>
+      </div>
+    </div>
+    <div class="hero-media reveal">
+      <img src="https://atlascanarias.es/wp-content/uploads/2022/02/Monitorizar-los-compresores-de-aire-1024x536.jpg" alt="Sistema de aire comprimido industrial" loading="eager">
+      <!-- Monitor en vivo -->
+      <div class="monitor-panel" id="monitorPanel">
+        <div class="mp-head">
+          <div class="mp-live-ind"><span class="mp-dot"></span>EN VIVO</div>
+          <span class="mp-name">Atlas Remote Monitor</span>
+        </div>
+        <div class="mp-rows">
+          <div class="mp-row">
+            <span class="mp-lbl">Presión</span>
+            <div class="mp-prog"><div class="mp-fill" id="mpPresBar" style="width:78%"></div></div>
+            <span class="mp-val"><span id="mpPres">8.2</span> bar</span>
+          </div>
+          <div class="mp-row">
+            <span class="mp-lbl">Eficiencia</span>
+            <div class="mp-prog"><div class="mp-fill mp-fill-green" id="mpEficBar" style="width:94%"></div></div>
+            <span class="mp-val"><span id="mpEfic">94</span>%</span>
+          </div>
+          <div class="mp-row">
+            <span class="mp-lbl">Caudal</span>
+            <div class="mp-prog"><div class="mp-fill" id="mpCaudalBar" style="width:61%"></div></div>
+            <span class="mp-val"><span id="mpCaudal">850</span> l/min</span>
+          </div>
+        </div>
+        <canvas id="mpWave" class="mp-canvas" width="260" height="36"></canvas>
+        <div class="mp-foot">
+          <span class="mp-status-ok">● SISTEMA ÓPTIMO</span>
+          <span class="mp-ts" id="mpTs">--:--:--</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TELEMETRÍA ============ -->
+<div class="telemetria" aria-hidden="true">
+  <div class="tl-badge"><span class="tl-dot"></span>TELEMETRÍA</div>
+  <div class="tl-track"><div class="tl-inner" id="tlInner"></div></div>
+  <div class="tl-ok-label">● ÓPTIMO</div>
+</div>
+
+<!-- ============ STAT BAND ============ -->
+<section class="stats">
+  <div class="contenedor">
+    <div class="stat"><div class="n"><span data-count="30" data-suffix="+">0</span></div><div class="l">Años de experiencia</div></div>
+    <div class="stat"><div class="n"><span data-count="2">0</span></div><div class="l">Sedes · 2 islas</div></div>
+    <div class="stat"><div class="n"><span data-count="5">0</span></div><div class="l">Divisiones técnicas</div></div>
+    <div class="stat"><div class="n">SAT</div><div class="l">Servicio técnico propio</div></div>
+  </div>
+</section>
+
+<!-- ============ SOLUCIONES ============ -->
+<section class="seccion" id="soluciones">
+  <div class="contenedor">
+    <div class="cabecera-seccion reveal">
+      <span class="eyebrow">Qué hacemos</span>
+      <h2>Cuatro divisiones, una misma obsesión: que tu instalación rinda más.</h2>
+      <p>Desde el compresor hasta la última carretilla, diseñamos, instalamos y mantenemos los sistemas que mantienen tu producción en marcha.</p>
+    </div>
+
+    <div class="grid-soluciones">
+      <!-- 1 -->
+      <a class="solucion reveal" href="aire-comprimido.html">
+        <div class="foto"><img src="https://atlascanarias.es/wp-content/uploads/2022/02/Monitorizar-los-compresores-de-aire-1024x536.jpg" alt="Aire comprimido" loading="lazy"></div>
+        <div class="cuerpo">
+          <h3>Aire comprimido</h3>
+          <p>Compresores Atlas Copco, tratamiento y calidad del aire, redes de distribución, legalización de instalaciones y ahorro energético, con monitorización remota.</p>
+          <span class="mas">Ver soluciones →</span>
+        </div>
+      </a>
+      <!-- 2 -->
+      <a class="solucion reveal" href="manipulacion.html">
+        <div class="foto"><img src="https://atlascanarias.es/wp-content/uploads/2021/01/carretillas-nuevas-scaled.jpg" alt="Carretillas elevadoras" loading="lazy"></div>
+        <div class="cuerpo">
+          <h3>Manipulación de carga</h3>
+          <p>Carretillas elevadoras eléctricas, a gas o diésel: venta, alquiler y ocasión multimarca. Mantenimiento integral y regeneración de baterías.</p>
+          <span class="mas">Ver soluciones →</span>
+        </div>
+      </a>
+      <!-- 3 -->
+      <a class="solucion reveal" href="vacio-gases.html">
+        <div class="foto"><img src="https://atlascanarias.es/wp-content/uploads/2021/01/generador-vacio-y-gases.png" alt="Vacío y generación de gases" loading="lazy"></div>
+        <div class="cuerpo">
+          <h3>Vacío y gases</h3>
+          <p>Bombas y estaciones de vacío para procesos industriales, y generación in situ de nitrógeno (N₂) y oxígeno (O₂) sin depender de suministros externos.</p>
+          <span class="mas">Ver soluciones →</span>
+        </div>
+      </a>
+      <!-- 4 -->
+      <a class="solucion reveal" href="contacto.html">
+        <div class="foto"><img src="https://atlascanarias.es/wp-content/uploads/2022/02/Reducir-los-costes-de-las-fugas-en-compresores-de-aire-1024x536.jpg" alt="Generación de energía" loading="lazy"></div>
+        <div class="cuerpo">
+          <h3>Generación de energía</h3>
+          <p>Grupos electrógenos y equipos transportables para respaldo y obra. Diseño, suministro y mantenimiento preventivo con garantía de funcionamiento.</p>
+          <span class="mas">Consultar →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ATLAS ============ -->
+<section class="seccion seccion-clara">
+  <div class="contenedor bloque-2">
+    <div class="reveal">
+      <span class="eyebrow">Por qué Atlas Canarias</span>
+      <h2>El mantenimiento no es un gasto. Es lo que evita la parada que sí cuesta.</h2>
+      <p>A diferencia de los servicios poco rigurosos que obligan a cambiar de equipo cada poco, nuestro departamento de mantenimiento ofrece un plan preventivo que alarga la vida útil de tus activos y garantiza su disponibilidad.</p>
+      <ul class="lista-check">
+        <li><span class="tick">✓</span><span><strong>Servicio técnico propio</strong> en Tenerife y Gran Canaria, respuesta rápida.</span></li>
+        <li><span class="tick">✓</span><span><strong>Empresa instaladora EIP y ERP I y II</strong> para legalización e inspecciones.</span></li>
+        <li><span class="tick">✓</span><span><strong>Monitorización remota</strong> para anticipar fugas, picos de energía e ineficiencias.</span></li>
+        <li><span class="tick">✓</span><span><strong>Soluciones a medida</strong>, no catálogos cerrados.</span></li>
+      </ul>
+    </div>
+    <div class="media reveal">
+      <img src="https://atlascanarias.es/wp-content/uploads/2020/08/servicio-de-mantenimiento-de-aire-comprimido-atlas-canarias.png" alt="Servicio de mantenimiento de aire comprimido" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTORES ============ -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="cabecera-seccion reveal">
+      <span class="eyebrow">Sectores</span>
+      <h2>Trabajamos para la industria que mueve las islas.</h2>
+    </div>
+    <div class="sectores reveal">
+      <span class="sector-chip"><span class="pt"></span>Alimentación y bebidas</span>
+      <span class="sector-chip"><span class="pt"></span>Distribución y logística</span>
+      <span class="sector-chip"><span class="pt"></span>Talleres y automoción</span>
+      <span class="sector-chip"><span class="pt"></span>Aluminio, PVC y madera</span>
+      <span class="sector-chip"><span class="pt"></span>Clínicas y hospitales</span>
+      <span class="sector-chip"><span class="pt"></span>Construcción</span>
+      <span class="sector-chip"><span class="pt"></span>Cooperativas agrícolas</span>
+      <span class="sector-chip"><span class="pt"></span>Industria farmacéutica</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASOS ============ -->
+<section class="seccion seccion-clara">
+  <div class="contenedor">
+    <div class="cabecera-seccion reveal">
+      <span class="eyebrow">Casos de éxito</span>
+      <h2>Empresas como la tuya, con resultados que se miden.</h2>
+      <p>Una selección de proyectos reales en Canarias, en aire comprimido, vacío y manipulación de carga.</p>
+    </div>
+    <div class="grid-casos">
+      <article class="caso reveal">
+        <div class="foto"><img src="https://atlascanarias.es/wp-content/uploads/2022/02/Reducir-los-costes-de-las-fugas-en-compresores-de-aire-1024x536.jpg" alt="" loading="lazy"></div>
+        <div class="cuerpo">
+          <div class="cat">Aire comprimido</div>
+          <h3>−10% de costes en cooperativa agrícola (Los Silos, Tenerife)</h3>
+          <p>Optimización del sistema de aire de una planta platanera, con reducción directa del coste de producción.</p>
+        </div>
+      </article>
+      <article class="caso reveal">
+        <div class="foto"><img src="https://atlascanarias.es/wp-content/uploads/2021/01/generador-vacio-y-gases.png" alt="" loading="lazy"></div>
+        <div class="cuerpo">
+          <div class="cat">Vacío y gases</div>
+          <h3>Secado al vacío que reduce costes en construcción</h3>
+          <p>Bombas de vacío de anillo líquido para la producción de baldosas y ladrillos, mejorando la eficiencia del proceso.</p>
+        </div>
+      </article>
+      <article class="caso reveal">
+        <div class="foto"><img src="https://atlascanarias.es/wp-content/uploads/2022/02/Monitorizar-los-compresores-de-aire-1024x536.jpg" alt="" loading="lazy"></div>
+        <div class="cuerpo">
+          <div class="cat">Calidad del aire</div>
+          <h3>Aire limpio en producción de medicamentos</h3>
+          <p>Garantía de calidad del aire comprimido para una fábrica de comprimidos farmacéuticos bajo control estricto.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="seccion">
+  <div class="contenedor">
+    <div class="cta reveal">
+      <h2>¿Cuánto te está costando hoy lo que no estás midiendo?</h2>
+      <p>Solicita un diagnóstico de tu instalación de aire comprimido o manipulación. Sin compromiso, con números encima de la mesa.</p>
+      <a class="btn btn-primario" href="contacto.html">Solicitar diagnóstico <span class="flecha">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="contenedor">
+    <div class="footer-grid">
+      <div>
+        <img class="f-logo" src="https://atlascanarias.es/wp-content/uploads/2020/09/ATLAS-LOGO-LIGHT_Mesa-de-trabajo-1-150x61.png" alt="Atlas Canarias">
+        <p class="f-intro">Soluciones de aire comprimido, vacío y manipulación de carga. El mayor rendimiento de tus instalaciones, con el máximo ahorro.</p>
+      </div>
+      <div>
+        <h4>Soluciones</h4>
+        <a href="aire-comprimido.html">Aire comprimido</a>
+        <a href="manipulacion.html">Manipulación de carga</a>
+        <a href="vacio-gases.html">Vacío y gases</a>
+        <a href="contacto.html">Generación de energía</a>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="https://www.linkedin.com/company/grupoatlascanarias" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="mailto:info@atlascanarias.es">info@atlascanarias.es</a>
+        <a href="mailto:sat@atlascanarias.es">sat@atlascanarias.es</a>
+        <a href="tel:+34922202076">Tenerife · 922 202 076</a>
+        <a href="tel:+34928183823">Las Palmas · 928 183 823</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Atlas Canarias SL · Todos los derechos reservados</span>
+      <span>Soluciones de aire comprimido, vacío y manipulación de carga</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

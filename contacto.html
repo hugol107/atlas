@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Atlas Canarias</title>
+<meta name="description" content="Contacta con Atlas Canarias. Sedes en Tenerife y Las Palmas. Solicita un diagnóstico de tu instalación de aire comprimido o manipulación de carga.">
+<link rel="icon" href="https://atlascanarias.es/wp-content/uploads/2020/07/cropped-GRUPO-ATLAS-WEB-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="contenedor">
+    <div class="tb-tel">
+      <span>Tenerife: <a href="tel:+34922202076">922 202 076</a></span>
+      <span>Las Palmas: <a href="tel:+34928183823">928 183 823</a></span>
+    </div>
+    <div class="tb-right">
+      <a href="mailto:info@atlascanarias.es">info@atlascanarias.es</a>
+      <a href="https://www.linkedin.com/company/grupoatlascanarias" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="contenedor nav">
+    <a class="logo" href="index.html" aria-label="Atlas Canarias - inicio">
+      <span class="logo-pill"><img src="https://atlascanarias.es/wp-content/uploads/2020/09/ATLAS-LOGO-LIGHT_Mesa-de-trabajo-1-150x61.png" alt="Atlas Canarias"></span>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="aire-comprimido.html">Aire comprimido</a>
+      <a href="manipulacion.html">Manipulación</a>
+      <a href="vacio-gases.html">Vacío y gases</a>
+      <a href="contacto.html" class="activo">Contacto</a>
+    </nav>
+    <div class="nav-acciones">
+      <a class="btn btn-primario" href="#form">Solicitar diagnóstico</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div id="movil">
+  <button class="cerrar" id="cerrarMovil" aria-label="Cerrar menú">×</button>
+  <a href="index.html">Inicio</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="aire-comprimido.html">Aire comprimido</a>
+  <a href="manipulacion.html">Manipulación</a>
+  <a href="vacio-gases.html">Vacío y gases</a>
+  <a href="contacto.html">Contacto</a>
+  <a class="btn btn-primario" href="#form">Solicitar diagnóstico</a>
+</div>
+
+<section class="page-head">
+  <div class="contenedor">
+    <div class="ruta"><a href="index.html">Inicio</a> · Contacto</div>
+    <h1>Hablemos de tu instalación.</h1>
+    <p>Cuéntanos qué necesitas y te responderemos en menos de 24 horas laborables. Sin compromiso.</p>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="contenedor contacto-grid" id="form">
+    <!-- FORMULARIO -->
+    <div class="reveal">
+      <h2 style="font-size:1.5rem;margin-bottom:18px">Solicita un diagnóstico</h2>
+      <!-- Formulario demo: no envía datos a ningún servidor. Para activarlo de verdad,
+           conecta el atributo action a tu servicio (Formspree, tu CRM, etc.). -->
+      <form id="formContacto" novalidate>
+        <div class="form-campo">
+          <label for="nombre">Nombre y empresa</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre · Tu empresa" required>
+        </div>
+        <div class="form-fila">
+          <div class="form-campo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@empresa.com" required>
+          </div>
+          <div class="form-campo">
+            <label for="tel">Teléfono</label>
+            <input type="tel" id="tel" name="tel" placeholder="600 000 000">
+          </div>
+        </div>
+        <div class="form-fila">
+          <div class="form-campo">
+            <label for="sede">Sede más cercana</label>
+            <select id="sede" name="sede">
+              <option>Tenerife</option>
+              <option>Las Palmas / Gran Canaria</option>
+              <option>Otra isla</option>
+            </select>
+          </div>
+          <div class="form-campo">
+            <label for="interes">Me interesa</label>
+            <select id="interes" name="interes">
+              <option>Aire comprimido</option>
+              <option>Manipulación / carretillas</option>
+              <option>Vacío y gases</option>
+              <option>Generación de energía</option>
+              <option>Mantenimiento</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-campo">
+          <label for="mensaje">Cuéntanos tu necesidad</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente tu instalación o lo que buscas..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primario">Enviar solicitud <span class="flecha">→</span></button>
+        <div class="form-aviso" id="formAviso" role="status"></div>
+      </form>
+    </div>
+
+    <!-- SEDES -->
+    <div class="reveal">
+      <div class="sede-card">
+        <div class="et">Sede Tenerife</div>
+        <h3>Santa Cruz de Tenerife</h3>
+        <address>C/ Subida al Mayorazgo, Nº 3<br>Edf. Atlas Copco · P.I. El Mayorazgo<br>38110 · S/C de Tenerife</address>
+        <p style="margin-top:14px"><a href="tel:+34922202076">☎ 922 202 076</a></p>
+        <p><a href="mailto:info@atlascanarias.es">info@atlascanarias.es</a></p>
+      </div>
+      <div class="sede-card">
+        <div class="et">Sede Las Palmas</div>
+        <h3>Agüimes, Gran Canaria</h3>
+        <address>C/ De la Cizalla, Nº 5<br>P.I. de Arinaga<br>35118 · Agüimes · Las Palmas</address>
+        <p style="margin-top:14px"><a href="tel:+34928183823">☎ 928 183 823</a></p>
+        <p><a href="mailto:sat@atlascanarias.es">sat@atlascanarias.es</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="contenedor">
+    <div class="footer-grid">
+      <div>
+        <img class="f-logo" src="https://atlascanarias.es/wp-content/uploads/2020/09/ATLAS-LOGO-LIGHT_Mesa-de-trabajo-1-150x61.png" alt="Atlas Canarias">
+        <p class="f-intro">Soluciones de aire comprimido, vacío y manipulación de carga. El mayor rendimiento de tus instalaciones, con el máximo ahorro.</p>
+      </div>
+      <div><h4>Soluciones</h4>
+        <a href="aire-comprimido.html">Aire comprimido</a>
+        <a href="manipulacion.html">Manipulación de carga</a>
+        <a href="vacio-gases.html">Vacío y gases</a>
+        <a href="contacto.html">Generación de energía</a>
+      </div>
+      <div><h4>Empresa</h4>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="https://www.linkedin.com/company/grupoatlascanarias" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div><h4>Contacto</h4>
+        <a href="mailto:info@atlascanarias.es">info@atlascanarias.es</a>
+        <a href="mailto:sat@atlascanarias.es">sat@atlascanarias.es</a>
+        <a href="tel:+34922202076">Tenerife · 922 202 076</a>
+        <a href="tel:+34928183823">Las Palmas · 928 183 823</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Atlas Canarias SL · Todos los derechos reservados</span>
+      <span>Soluciones de aire comprimido, vacío y manipulación de carga</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
